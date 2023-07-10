@@ -1,0 +1,16 @@
+.btn_light
+{
+    width: 106px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #0079FF;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+}

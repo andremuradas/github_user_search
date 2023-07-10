@@ -1,0 +1,239 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace; 
+}
+
+body
+{
+    background-image: url(../images/Desktop\ -\ Light.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: #F6F8FF;
+    padding-top: 145px;
+
+}
+
+header,
+section
+{
+    max-width: 730px;
+    margin: auto;
+}
+
+main
+{
+    opacity: 0.3;
+}
+
+header .container
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .container .left
+{
+    color: #222731;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+header .container .right
+{
+    color: #697C9A;
+    /* text-align: right; */
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+header .container .right span
+{
+    margin-right: 13px;
+}
+
+.search_bar .container
+{
+    height: 69px;
+    border-radius: 15px;
+    background: #FEFEFE;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+    margin-top: 35px;
+    margin-bottom: 24px;
+    display: flex;
+}
+
+.search_bar .container .left
+{
+    width: 80px;
+    display: grid;
+    place-items: center;
+    padding-left: 8px;
+}
+
+.search_bar .container .center
+{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.search_bar .container .center input
+{
+    width: 400px;
+    height: 100%;
+    color: #4B6A9B;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    border: none;
+}
+
+.search_bar .container .right
+{
+    width: 128px;
+    display: grid;
+    place-items: center;
+}
+
+.user_description .container
+{
+    height: 419px;
+    border-radius: 15px;
+    background: #FEFEFE;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
+}
+
+
+.user_description .container
+{
+    display: flex;
+    padding: 48px;
+}
+
+.user_description .container .left
+{
+    width: 154px;
+    overflow: hidden;
+}
+
+.img_user
+{
+    width: 117px;
+    height: 117px;
+    border-radius: 50%;
+    background: url(<path-to-image>), lightgray 0px 0px / 100% 100% no-repeat;
+
+}
+
+
+.user_description .container .right
+{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.head_description
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-top: -4px;
+    margin-bottom: 3px;
+}
+
+.name
+{
+    color: #2B3442;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.register
+{
+    color: #697C9A;
+    text-align: right;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user
+{
+    color: #0079FF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 21px;
+}
+
+.bio
+{
+    color: #4B6A9B;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 32px;
+}
+
+.numbers
+{
+    display: flex;
+    height: 85px;
+    border-radius: 10px;
+    background: #F6F8FF;
+    padding: 15px 32px 17px 32px;
+    
+}
+
+
+.title
+{
+    color: #4B6A9B;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.number
+{
+    color: #2B3442;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.repos
+{
+    width: 139px;
+}
+
+.followers
+{
+    width: 154px;
+}
+
+
+

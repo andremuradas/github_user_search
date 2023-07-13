@@ -34,11 +34,19 @@ function lightTheme() {
   r.style.setProperty('--ligth-color-4', ColorLight4);
 }
 
-function redColor()
+function svgDarkTheme()
 {
-  let fill = document.querySelectorAll('svg g');
-  for(var i = 0; i < fill.length; i++){
-    fill[i].setAttribute('fill','#fff');
+  let svgImg = document.querySelectorAll('svg path');
+  for(var i = 0; i < svgImg.length; i++){
+    svgImg[i].setAttribute('class','fillDark');
+  }
+}
+
+function svgLightkTheme()
+{
+  let svgImg = document.querySelectorAll('svg path');
+  for(var i = 0; i < svgImg.length; i++){
+    svgImg[i].removeAttribute('class');
   }
 }
 
@@ -46,6 +54,7 @@ function redColor()
 modeBtn.addEventListener('click', () => {
   if(modeBtn.children[0].innerText == 'DARK'){
     darkTheme();
+    svgDarkTheme()
     modeBtn.children[0].innerText = "LIGHT";
     modeBtn.children[1].innerHTML = ""
     modeBtn.children[1].innerHTML = `
@@ -57,6 +66,7 @@ modeBtn.addEventListener('click', () => {
 
   }else if(modeBtn.children[0].innerText == 'LIGHT'){
     lightTheme();
+    svgLightkTheme()
     modeBtn.children[0].innerText = "DARK";
     modeBtn.children[1].innerHTML = ""
     modeBtn.children[1].innerHTML = `

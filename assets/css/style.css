@@ -46,10 +46,7 @@ section
     margin: auto;
 }
 
-main
-{
-    /* opacity: 0.3; */
-}
+
 
 header .container
 {
@@ -325,3 +322,7 @@ header .container .right:hover svg path
 }
 
 
+.fillDark
+{
+    fill: #fff;
+}

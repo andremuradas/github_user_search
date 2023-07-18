@@ -23,9 +23,9 @@ body
 {
     /* background-image: url(../images/Desktop\ -\ Light.jpg);
     background-repeat: no-repeat;
-    background-position-x: center; */
+    background-position-x: center;
+    background-position-y: -19px; */
     background-color: var(--ligth-background-1);
-    /* padding-top: 145px; */
 
 }
 
@@ -156,7 +156,6 @@ header .container .right:hover svg path
 
 .user_description .container
 {
-    height: 419px;
     border-radius: 15px;
     background: var(--ligth-background-2);
     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.20);
@@ -167,12 +166,15 @@ header .container .right:hover svg path
 {
     display: flex;
     padding: 48px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-end;
 }
 
-.user_description .container .left
+.user_description-left
 {
-    width: 154px;
-    overflow: hidden;
+    width: 117px;
+    height: 0;
 }
 
 .img_user
@@ -184,12 +186,18 @@ header .container .right:hover svg path
 
 }
 
-
-.user_description .container .right
+.user_description-right
 {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    width: 517px;
+    height: 82px;
+    padding-left: 37px;
+}
+
+.user_description-botton
+{
+    width: 517px;
+    
+    padding-left: 37px;
 }
 
 .head_description
@@ -197,10 +205,19 @@ header .container .right:hover svg path
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
     margin-top: -4px;
     margin-bottom: 3px;
+}
+
+.head_description-left
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.head_description-right
+{
+    padding-top: 8px;
 }
 
 .name
@@ -229,6 +246,7 @@ header .container .right:hover svg path
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin-top: 2px;
     margin-bottom: 20px;
 }
 
@@ -325,4 +343,204 @@ header .container .right:hover svg path
 .fillDark
 {
     fill: #fff;
+}
+
+
+
+@media (max-width: 768px)
+{
+
+    body
+    {
+        /* background-image: url(../images/Tablet\ -\ Light.jpg);
+        background-repeat: no-repeat;
+        background-position-y: -60px; */
+        
+    }
+    
+    main
+    {
+        /* opacity: 0.3; */
+    }
+    header,
+    section,
+    header .container
+    {
+        min-width: 573px;
+        max-width: 573px;
+    }
+
+
+    .search_bar .container .left
+    {
+        padding-left: 7px;
+    }
+
+    .search_bar .container .center input
+    {
+        width: 275px;
+    }
+
+    .user_description .container
+    {
+        padding: 40px;
+    }
+
+    .user_description-right
+    {
+        width: 376px;
+        height: 117px;
+        padding-left: 40px;
+    }
+
+    .user_description-botton
+    {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .repos
+    {
+        width: 138px;
+    }
+
+    .followers
+    {
+        width: 154px;
+    }
+
+    
+
+    .head_description
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 17px;
+    }
+
+    .user
+    {
+        margin-bottom: -3px;
+    }
+
+    .bio
+    {
+        margin-top: 24px;
+    }
+
+    .info
+    {
+        margin-top: 31px;
+    }
+}
+
+@media (max-width: 375px)
+{
+    body
+    {
+        background-image: url(../images/Mobile\ -\ Light.jpg);
+        background-repeat: no-repeat;
+        background-position-y: 24px;
+        
+    }
+    
+    main
+    {
+        opacity: 0.3;
+    }
+
+
+    header,
+    section,
+    header .container
+    {
+        min-width: 327px;
+        max-width: 327px;
+    }
+
+    .search_bar .container
+    {
+        height: 60px;
+
+    }
+
+    .search_bar .container .left
+    {
+        padding-left: 15px;
+        width: fit-content;
+    }
+    .search_bar .container .left img
+    {
+        width: 21px;
+    }
+
+    .search_bar .container .center
+    {
+        padding-left: 9px;
+        flex: auto;
+    }
+
+    .search_bar .container .center input
+    {
+        width: 185px;
+        font-size: 13px;
+    }
+
+    .btn_light
+    {
+        width: 84px;
+        height: 46px;
+    }
+
+    .user_description .container
+    {
+        padding: 24px;
+        justify-content: flex-start;
+    }
+
+    .user_description-left
+    {
+        width: 70px;
+    }
+
+    .img_user
+    {
+        width: 70px;
+        height: 70px;
+    }
+
+    .user_description-right
+    {
+        width: 209px;
+        height: 70px;
+        padding-left: 20px;
+    }
+
+    .head_description
+    {
+        padding-top: 6px;
+    }
+
+    .name
+    {
+        font-size: 16px;
+    }
+
+    .user
+    {
+        margin-top: 0px;
+        font-size: 13px;
+    }
+
+    .register
+    {
+        
+        font-size: 13px;
+    }
+
+    .bio
+    {
+        margin-top: 34px;
+    }
+
 }

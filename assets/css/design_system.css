@@ -14,3 +14,14 @@
     display: grid;
     place-items: center;
 }
+
+
+@media (max-width: 375px)
+{
+    .btn_light
+    {
+        width: 84px;
+        height: 46px;
+        font-size: 14px;
+    }
+}

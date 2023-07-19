@@ -438,16 +438,12 @@ header .container .right:hover svg path
 {
     body
     {
-        background-image: url(../images/Mobile\ -\ Light.jpg);
+        /* background-image: url(../images/Mobile\ -\ Light.jpg);
         background-repeat: no-repeat;
-        background-position-y: 24px;
+        background-position-y: 50px; */
         
     }
-    
-    main
-    {
-        opacity: 0.3;
-    }
+
 
 
     header,
@@ -541,6 +537,50 @@ header .container .right:hover svg path
     .bio
     {
         margin-top: 34px;
+        font-size: 13px;
+    }
+
+    .repos,
+    .followers,
+    .following
+    {
+        width: fit-content;
+    }
+
+    .repos
+    {
+        margin-right: 33px;
+    }
+
+    .followers
+    {
+        
+        margin-right: 25px;
+    }
+
+    .title
+    {
+        font-size: 11px;
+    }
+    .number
+    {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .numbers
+    {
+        padding: 9px 28px 17px 38px;
+    }
+
+    .info
+    {
+        margin-top: 14px;
+    }
+
+    .info_content span
+    {
+        font-size: 13px;
     }
 
 }

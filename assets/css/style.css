@@ -43,6 +43,7 @@ header,
 section
 {
     min-width: 730px;
+    max-width: 730px;
     margin: auto;
 }
 
@@ -51,6 +52,7 @@ section
 header .container
 {
     min-width: 730px;
+    max-width: 730px;
     display: flex;
     justify-content: space-between;
 }
@@ -128,6 +130,10 @@ header .container .right:hover svg path
     align-items: center;
 }
 
+form
+{
+    height: 100%;
+}
 .search_bar .container .center input
 {
     width: 400px;
@@ -152,6 +158,13 @@ header .container .right:hover svg path
     width: 128px;
     display: grid;
     place-items: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+{
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
 }
 
 .user_description .container
@@ -182,8 +195,13 @@ header .container .right:hover svg path
     width: 117px;
     height: 117px;
     border-radius: 50%;
-    background: url(<path-to-image>), lightgray 0px 0px / 100% 100% no-repeat;
+    overflow: hidden;
+    background-color: lightgray;
+}
 
+.img_user img
+{
+    width: inherit;
 }
 
 .user_description-right
@@ -376,7 +394,7 @@ header .container .right:hover svg path
         padding-left: 7px;
     }
 
-    .search_bar .container .center input
+    .search_bar .container .center form input
     {
         width: 275px;
     }

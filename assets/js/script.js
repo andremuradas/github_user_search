@@ -74,3 +74,95 @@ modeBtn.addEventListener('click', () => {
   `
   }
 });
+
+function getMonthName(monthNumber) {
+  const date = new Date();
+  date.setMonth(monthNumber - 1);
+
+  return date.toLocaleString('en-US', { month: 'short' });
+}
+
+
+function load(){
+  fetch('https://api.github.com/users/'+searchInput.value)
+      .then(function(resultado){
+          return resultado.json();
+      })
+      .then(function(json){
+          console.log(json);
+          avatar.setAttribute('src',json.avatar_url);
+          userName.innerHTML = json.name;
+          login.innerHTML ="@"+json.login;
+
+          let created = json.created_at;
+          let day = created.split("-")[2].slice(0, 2);
+          let month = getMonthName(created.split("-")[1]);
+          let year = created.split("-")[0];
+          createdAt.innerHTML = "Joined "+day+" "+month+" "+year;
+
+          if(json.bio !== null){
+            bio.innerHTML = json.bio;
+            
+          } else {
+            bio.innerHTML = "This profile has no bio";
+          }
+
+          reposNumber.innerHTML = json.public_repos;
+          followersNumber.innerHTML = json.followers;
+          followingNumber.innerHTML = json.following;
+
+          if(json.location !== null){
+            userLocation.innerHTML = json.location;
+          } else {
+            userLocation.innerHTML = "Not Available";
+          }
+
+          if(json.blog !== ""){
+            userWebsite.innerHTML = json.blog;
+          } else {
+            userWebsite.innerHTML = "Not Available";
+          }
+
+          if(json.twitter_username !== null){
+            userTwitter.innerHTML = json.twitter_username;
+          } else {
+            userTwitter.innerHTML = "Not Available";
+          }
+
+          if(json.company !== null){
+            userCompany.innerHTML = json.company;
+          } else {
+            userCompany.innerHTML = "Not Available";
+          }
+          
+      })
+      .catch(function(error){
+          console.log("No results");
+      })
+}
+let searchForm = document.querySelector('#search');
+let searchBtn = document.querySelector('#searchBtn');
+let searchInput = document.querySelector('#userName');
+let avatar = document.querySelector('#avatar');
+let userName = document.querySelector('#name');
+let login = document.querySelector('#login');
+let createdAt = document.querySelector('#createdAt');
+let bio = document.querySelector('#bio');
+let reposNumber = document.querySelector('#reposNumber');
+let followersNumber = document.querySelector('#followersNumber');
+let followingNumber = document.querySelector('#followingNumber');
+let userLocation = document.querySelector('#userLocation');
+let userWebsite = document.querySelector('#userWebsite');
+let userTwitter = document.querySelector('#userTwitter');
+let userCompany = document.querySelector('#userCompany');
+
+searchBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  load()
+});
+
+searchForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  load();
+});
+

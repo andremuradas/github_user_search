@@ -82,14 +82,66 @@ function getMonthName(monthNumber) {
   return date.toLocaleString('en-US', { month: 'short' });
 }
 
+function clean(){
+  errorMsg.innerHTML = "";
+  avatar.setAttribute('src','');
+  userName.innerHTML = "";
+  login.innerHTML ="";
+  createdAt.innerHTML = "";
+  bio.innerHTML = "";
+  reposNumber.innerHTML = "";
+  followersNumber.innerHTML = "";
+  followingNumber.innerHTML = "";
+  userLocation.innerHTML = "";
+  userWebsite.innerHTML = "";
+  userTwitter.innerHTML = "";
+  userCompany.innerHTML = "";
+}
+
+let loadingPage = document.querySelector('.loading_user');
+let avatarImg = document.querySelector('.user_description-left');
+let userId = document.querySelector('.user_description-right');
+let userBio = document.querySelector('.user_description-botton');
+let error = document.querySelector('.errorMsg');
+
+function loading(){
+  error.style.display = "none"
+  avatarImg.style.display = "none"
+  userId.style.display = "none"
+  userBio.style.display = "none"
+  loadingPage.style.display = "flex"
+  
+}
+
+function loaded(){
+  error.style.display = "none"
+  avatarImg.style.display = "block"
+  userId.style.display = "block"
+  userBio.style.display = "block"
+  loadingPage.style.display = "none"
+}
+
+function errorPage(){
+  error.style.display = "flex"
+  avatarImg.style.display = "none"
+  userId.style.display = "none"
+  userBio.style.display = "none"
+  loadingPage.style.display = "none"
+}
 
 function load(){
+  let animationOpen = document.querySelector('.user_description');
+  animationOpen.style.maxHeight = "1000px";
+  clean();
+  loading();
+  
   fetch('https://api.github.com/users/'+searchInput.value)
       .then(function(resultado){
           return resultado.json();
       })
       .then(function(json){
           console.log(json);
+          loaded()
           avatar.setAttribute('src',json.avatar_url);
           userName.innerHTML = json.name;
           login.innerHTML ="@"+json.login;
@@ -104,7 +156,7 @@ function load(){
             bio.innerHTML = json.bio;
             
           } else {
-            bio.innerHTML = "This profile has no bio";
+            bio.innerHTML = "This profile has no bio.";
           }
 
           reposNumber.innerHTML = json.public_repos;
@@ -113,30 +165,41 @@ function load(){
 
           if(json.location !== null){
             userLocation.innerHTML = json.location;
+            userLocation.parentElement.style.opacity = "1"
           } else {
             userLocation.innerHTML = "Not Available";
+            userLocation.parentElement.style.opacity = "0.5"
+
           }
 
           if(json.blog !== ""){
-            userWebsite.innerHTML = json.blog;
+            userWebsite.innerHTML = '<a href="'+json.blog+'" target="_blank">'+json.blog+'</a>';
+            userWebsite.parentElement.style.opacity = "1"
           } else {
             userWebsite.innerHTML = "Not Available";
+            userWebsite.parentElement.style.opacity = "0.5"
           }
 
           if(json.twitter_username !== null){
-            userTwitter.innerHTML = json.twitter_username;
+            userTwitter.innerHTML = '<a href="https://twitter.com/'+json.twitter_username+'" target="_blank">'+json.twitter_username+'</a>';
+            userTwitter.parentElement.style.opacity = "1"
           } else {
             userTwitter.innerHTML = "Not Available";
+            userTwitter.parentElement.style.opacity = "0.5"
           }
 
           if(json.company !== null){
             userCompany.innerHTML = json.company;
+            userCompany.parentElement.style.opacity = "1"
           } else {
             userCompany.innerHTML = "Not Available";
+            userCompany.parentElement.style.opacity = "0.5"
           }
           
       })
       .catch(function(error){
+        errorMsg.innerHTML = "No results";
+        errorPage()
           console.log("No results");
       })
 }
@@ -155,7 +218,7 @@ let userLocation = document.querySelector('#userLocation');
 let userWebsite = document.querySelector('#userWebsite');
 let userTwitter = document.querySelector('#userTwitter');
 let userCompany = document.querySelector('#userCompany');
-
+let errorMsg = document.querySelector('#error');
 searchBtn.addEventListener('click', (e) => {
   e.preventDefault();
   load()
